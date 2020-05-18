@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="rating_rating_report_view_tree" model="ir.ui.view">
+        <field name="name">rating.rating.report.tree</field>
+        <field name="model">rating.rating</field>
+        <field name="arch" type="xml">
+            <tree string="Rating" create="false" edit="false">
+                <field name="partner_id"/>
+                <field name="parent_res_name"/>
+                <field name="res_name"/>
+                <field name="rated_partner_id"/>
+                <field name="rating_text"/>
+                <field name="rating" type="measure"/>
+                <field name="feedback"/>
+                <field name="create_date" string="Submitted on"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="rating_rating_report_view_pivot" model="ir.ui.view">
+        <field name="name">rating.rating.report.pivot</field>
+        <field name="model">rating.rating</field>
+        <field name="arch" type="xml">
+            <pivot string="Rating Average" display_quantity="true">
+                <field name="partner_id" type="row"/>
+                <field name="parent_res_name" type="row"/>
+                <field name="res_name" type="row"/>
+                <field name="create_date" type="col"/>
+                <field name="rating_text" type="col"/>
+                <field name="rating" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="rating_rating_report_view_graph" model="ir.ui.view">
+        <field name="name">rating.rating.report.graph</field>
+        <field name="model">rating.rating</field>
+        <field name="arch" type="xml">
+            <graph string="Rating Average" type="bar">
+                <field name="partner_id" type="row"/>
+                <field name="parent_res_name" type="row"/>
+                <field name="res_name" type="row"/>
+                <field name="create_date" type="row"/>
+                <field name="rating" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_view_rating_report" model="ir.actions.act_window">
+        <field name="name">Rating</field>
+        <field name="res_model">rating.rating</field>
+        <field name="view_mode">tree,pivot</field>
+        <field name="view_id" ref="rating_rating_report_view_tree"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                No rating yet
+            </p>
+            <p>
+                There is no rating for this object at the moment.
+            </p>
+        </field>
+    </record>
+
+    <record id="rating_rating_report_view_tree_view_pivot" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">pivot</field>
+        <field name="view_id" ref="rating_rating_report_view_pivot"/>
+        <field name="act_window_id" ref="action_view_rating_report"/>
+    </record>
+
+    <menuitem id="helpdesk_rating_report_menu" name="Rating" action="action_view_rating_report"
+              sequence="100" parent="helpdesk.helpdesk_ticket_report_menu_main"
+              groups=""/>
+
+    <menuitem id="project_rating_report_menu" name="Rating" action="action_view_rating_report"
+              sequence="100" parent="project.menu_project_report"
+              groups=""/>
+
+</odoo>

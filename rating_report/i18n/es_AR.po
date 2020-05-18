@@ -1,0 +1,45 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* rating_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-18 21:59+0000\n"
+"PO-Revision-Date: 2020-05-18 21:59+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: rating_report
+#: model:ir.actions.act_window,help:rating_report.action_view_rating_report
+msgid "No rating yet"
+msgstr "Aún no hay calificación"
+
+#. module: rating_report
+#: model:ir.actions.act_window,name:rating_report.action_view_rating_report
+#: model:ir.ui.menu,name:rating_report.project_rating_report_menu
+#: model:ir.ui.view,arch_db:rating_report.rating_rating_report_view_tree
+msgid "Rating"
+msgstr "Calificación"
+
+#. module: rating_report
+#: model:ir.ui.view,arch_db:rating_report.rating_rating_report_view_graph
+#: model:ir.ui.view,arch_db:rating_report.rating_rating_report_view_pivot
+msgid "Rating Average"
+msgstr "Calificación promedio"
+
+#. module: rating_report
+#: model:ir.ui.view,arch_db:rating_report.rating_rating_report_view_tree
+msgid "Submitted on"
+msgstr "Enviada el"
+
+#. module: rating_report
+#: model:ir.actions.act_window,help:rating_report.action_view_rating_report
+msgid "There is no rating for this object at the moment."
+msgstr "No hay calificación de momento para este objeto"
+
