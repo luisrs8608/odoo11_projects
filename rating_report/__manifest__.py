@@ -8,8 +8,7 @@
     'website': 'http://www.aitic.com.ar',
     'license': 'AGPL-3',
     'category': 'Web',
-    'depends': ['rating', 'project'],
-    # 'depends': ['rating', 'project', 'helpdesk'],
+    'depends': ['rating', 'project', 'helpdesk'],
     'description': """
 Rating report
 =====================================================
