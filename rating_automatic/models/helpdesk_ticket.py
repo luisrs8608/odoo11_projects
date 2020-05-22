@@ -11,7 +11,7 @@ class RatingAutomaticHelpdeskTicket(models.Model):
         if 'stage_id' in vals:
             helpdesk_stage_id = self.env['helpdesk.stage'].browse(vals['stage_id'])
             if helpdesk_stage_id.is_close and helpdesk_stage_id.fold and not self.env['rating.rating'].search(
-                    [('res_model', '=', self._name), ('res_id', '=', self.id)]):
+                    [('res_model', '=', self._name), ('res_id', '=', self.id), ('consumed', '=', True)]):
                 record_model_id = self.env['ir.model'].sudo().search([('model', '=', self._name)], limit=1).id
                 self.env['rating.rating'].create({
                     'rating': 10,
